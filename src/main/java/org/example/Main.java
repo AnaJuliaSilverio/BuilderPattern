@@ -1,14 +1,13 @@
 package org.example;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.example.builder.MainDishBuilder;
+
+public class Main
 {
     public static void main( String[] args )
     {
-        StringBuilder stringBuilder = new StringBuilder();
-        System.out.println( "Hello World!" );
+        MainDishBuilder mainDishBuilder = new MainDishBuilder();
+        mainDishBuilder.makeMeal().makeBeverage();
+        System.out.println(mainDishBuilder.getPrice());
     }
 }

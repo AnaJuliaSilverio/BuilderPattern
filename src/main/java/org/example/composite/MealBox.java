@@ -1,2 +1,16 @@
-package org.example.composite;public class MealBox {
+package org.example.composite;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MealBox implements MealCompositeProtocol {
+    private List<MealCompositeProtocol> children = new ArrayList<>();
+    public double getPrice() {
+        return children.stream()
+                .mapToDouble(MealCompositeProtocol::getPrice)
+                .sum();
+    }
+    public void add(MealCompositeProtocol meal){
+        children.add(meal);
+    }
 }
